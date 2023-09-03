@@ -17,7 +17,7 @@
     <script type="text/javascript" src="/appointment-system/script.js"></script>
 </head>
 
-<body>
+<body style="overflow: hidden; font-family: 'Montserrat', sans-serif">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-sm-12 col-md-4">
@@ -52,7 +52,7 @@ if ($conn->connect_error) {
     die("Connection failed" . $conn->connect_error);
 }
 
-$submittedEmail = $_POST['email'];
+$submittedEmail = $_POST['email'] ?? null;
 
 $sqlEmail = "SELECT * FROM admin WHERE email = ?";
 $stmtEmail = $conn->prepare($sqlEmail);
@@ -60,7 +60,7 @@ $stmtEmail->bind_param("s", $submittedEmail);
 $stmtEmail->execute();
 $resultEmail = $stmtEmail->get_result();
 
-$submittedPassword = $_POST['password'];
+$submittedPassword = $_POST['password'] ?? null;
 $sqlPassword = "SELECT * FROM admin WHERE password=?";
 $stmtPassword = $conn->prepare($sqlPassword);
 $stmtPassword->bind_param("s", $submittedPassword);

@@ -17,7 +17,7 @@
   <script type="text/javascript" src="/appointment-system/script.js"></script>
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif">
   <div class="landing-page-backgroundIMG"></div>
   <div class="col shadow-lg p-3 mb-5 bg-body-tertiary rounded">
     <img alt="logo" src="/appointment-system/images/logo.png">
